@@ -6,7 +6,6 @@ import { CtaBand } from "@/components/CtaBand";
 import { Reveal } from "@/components/Reveal";
 import { TextReveal } from "@/components/TextReveal";
 import { Parallax } from "@/components/Parallax";
-import { Icon } from "@/components/Icon";
 import { values, routes } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -15,10 +14,10 @@ export const metadata: Metadata = {
     "BridgeEd Ghana Foundation was founded from lived experience to give every Ghanaian student equal access to opportunity.",
 };
 
-const creds = [
-  "MBA, Healthcare Organization & Management, University of Connecticut",
-  "MS Counseling, University of Bridgeport",
-  "20+ years as an educator, therapist, and social-services manager",
+const founderBio = [
+  "Solomon Darko, BSc, Dip. Ed., MPhil, MSc, MBA is a licensed mental health counselor, educator, healthcare entrepreneur, and nonprofit leader committed to expanding access to quality healthcare and education in the United States and Ghana. With advanced training in biological sciences, education, psychology, counseling, and healthcare management, he brings a multidisciplinary approach to improving lives and strengthening communities.",
+  "Solomon is the co-founder of Deeper View Counseling, Deeper View Homemakers & Companion Services, BridgeEd Foundation, and Genesis+ Wellness. His work is driven by a simple but powerful belief: that education and healthcare are fundamental to creating healthier individuals, stronger communities, and lasting social change.",
+  "Through compassionate leadership, strategic partnerships, and innovative community initiatives, Solomon is building organizations that empower people, develop future leaders, and create sustainable opportunities for generations to come.",
 ];
 
 export default function About() {
@@ -68,63 +67,77 @@ export default function About() {
         </Container>
       </section>
 
-      {/* STORY + FOUNDER — editorial */}
+      {/* STORY */}
       <section className="bg-surface py-24 md:py-36">
         <Container>
-          <div className="grid gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-24">
-            <div>
-              <TextReveal
-                lines={["Our Story"]}
-                className="text-[clamp(2rem,3.6vw,3.4rem)] font-bold leading-[1.08]"
-              />
-              <Reveal delay={0.12}>
-                <p className="mt-8 max-w-[58ch] text-lg leading-relaxed text-ink-soft xl:text-xl">
-                  BridgeEd Ghana Foundation was founded from lived experience.
-                  Having attended both underserved and urban schools in Ghana, our
-                  founder experienced firsthand how lack of access to internet,
-                  academic support, and guidance limits even the most talented
-                  students.
-                </p>
-              </Reveal>
-              <Reveal delay={0.18}>
-                <p className="mt-6 max-w-[58ch] text-lg leading-relaxed text-ink-soft xl:text-xl">
-                  BridgeEd was created to change that. We bring connection,
-                  computers, and mentorship directly into the schools that need
-                  them most, so potential is met with opportunity.
-                </p>
-              </Reveal>
-            </div>
+          <TextReveal
+            lines={["Our Story"]}
+            className="text-[clamp(2rem,3.6vw,3.4rem)] font-bold leading-[1.08]"
+          />
+          <Reveal delay={0.12}>
+            <p className="mt-8 max-w-[58ch] text-lg leading-relaxed text-ink-soft xl:text-xl">
+              BridgeEd Ghana Foundation was founded from lived experience.
+              Having attended both underserved and urban schools in Ghana, our
+              founder experienced firsthand how lack of access to internet,
+              academic support, and guidance limits even the most talented
+              students.
+            </p>
+          </Reveal>
+          <Reveal delay={0.18}>
+            <p className="mt-6 max-w-[58ch] text-lg leading-relaxed text-ink-soft xl:text-xl">
+              BridgeEd was created to change that. We bring connection,
+              computers, and mentorship directly into the schools that need
+              them most, so potential is met with opportunity.
+            </p>
+          </Reveal>
+        </Container>
+      </section>
 
-            {/* founder — editorial sidebar, no box */}
-            <Reveal delay={0.15}>
-              <aside className="border-l-2 border-accent pl-8 lg:mt-4">
-                <div className="flex items-center gap-4">
-                  {/* TODO: replace initials avatar with a real photo of Solomon Darko */}
-                  <span className="grid h-16 w-16 flex-none place-items-center rounded-pill bg-accent-wash text-xl font-extrabold text-accent-deep">
-                    SD
-                  </span>
-                  <div>
-                    <div className="text-lg font-bold">Solomon Darko</div>
-                    <div className="text-sm text-ink-muted">
-                      Founder, BridgeEd Ghana Foundation
-                    </div>
-                  </div>
-                </div>
-                <p className="mt-6 leading-relaxed text-ink-soft">
-                  An educator and social-services leader with more than two
-                  decades of experience, and a lasting commitment to poverty
-                  alleviation and serving those in need.
-                </p>
-                <ul className="mt-6 flex flex-col gap-3.5">
-                  {creds.map((c) => (
-                    <li key={c} className="flex gap-3 text-sm leading-relaxed text-ink-soft">
-                      <Icon name="Check" size={18} className="mt-0.5 flex-none text-accent-deep" weight="bold" />
-                      <span>{c}</span>
-                    </li>
-                  ))}
-                </ul>
-              </aside>
+      {/* THE FOUNDER — full section: photo + background + accomplishments */}
+      <section className="py-24 md:py-36">
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+            <Reveal direction="left">
+              <figure className="relative mx-auto aspect-[4/5] w-full max-w-[480px] overflow-hidden rounded-lg shadow-card">
+                <Image
+                  src="/img/founder.jpg"
+                  alt="Solomon Darko, founder of BridgeEd Ghana Foundation"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </figure>
             </Reveal>
+
+            <div>
+              <Reveal>
+                <span className="text-sm font-semibold text-accent-deep">
+                  The Founder
+                </span>
+              </Reveal>
+              <TextReveal
+                lines={["Solomon Darko"]}
+                delay={0.08}
+                className="mt-3 text-[clamp(2rem,3.8vw,3.4rem)] font-bold leading-[1.06]"
+              />
+              <Reveal delay={0.16}>
+                <p className="mt-2 font-semibold text-accent-deep">
+                  BSc, Dip. Ed., MPhil, MSc, MBA
+                </p>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <p className="mt-1 font-semibold text-ink-muted">
+                  Founder, BridgeEd Ghana Foundation
+                </p>
+              </Reveal>
+              {founderBio.map((para, i) => (
+                <Reveal key={i} delay={0.24 + i * 0.06}>
+                  <p className="mt-6 max-w-[58ch] leading-relaxed text-ink-soft xl:text-lg xl:leading-relaxed">
+                    {para}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
@@ -132,23 +145,42 @@ export default function About() {
       {/* MISSION / VISION — pure typography */}
       <section className="py-28 md:py-40">
         <Container>
-          <div className="grid gap-16 md:grid-cols-2 md:gap-24">
-            <Reveal>
-              <div>
+          <div className="flex flex-col gap-16">
+            <Reveal direction="left">
+              <div className="max-w-[40rem]">
                 <span className="font-semibold text-accent-deep">Our Mission</span>
                 <p className="mt-5 text-2xl font-medium leading-relaxed text-ink xl:text-3xl xl:leading-relaxed">
-                  To equip underserved students in Ghana with academic support,
-                  digital access, and university readiness tools.
+                  The project is designed to improve educational opportunities
+                  for academically gifted students in Ghana who face financial
+                  barriers.
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={0.1}>
-              <div>
+            <Reveal delay={0.1} direction="right" className="flex justify-end">
+              <div className="max-w-[40rem]">
                 <span className="font-semibold text-accent-deep">Our Vision</span>
                 <p className="mt-5 text-2xl font-medium leading-relaxed text-ink xl:text-3xl xl:leading-relaxed">
                   A Ghana where every student, regardless of background, has equal
                   access to opportunity.
                 </p>
+                <p className="mt-8 font-semibold text-ink">
+                  Long term, we are building a foundation that:
+                </p>
+                <ul className="mt-4 flex flex-col gap-3">
+                  {[
+                    "Identifies exceptional students early",
+                    "Removes financial barriers to education",
+                    "Provides mentorship and leadership development",
+                    "Expands access to technology and digital learning",
+                    "Builds a lifelong alumni network committed to giving back",
+                    "Partners with schools, universities, businesses, churches, and the Ghanaian diaspora to multiply its impact",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3 leading-relaxed text-ink-soft">
+                      <span aria-hidden className="mt-[0.62rem] h-1.5 w-1.5 flex-none rounded-pill bg-emerald" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           </div>

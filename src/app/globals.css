@@ -6,25 +6,33 @@
   (glows / gradients), never on interactive elements. Light theme locked.
 */
 @theme {
+  /* Brand palette (client spec):
+     Deep Royal Blue #0B4F9C — dominant: interactive, logo, structure
+     Emerald Green   #2E8B57 — growth: checks, progress, success
+     Gold            #D4A017 — excellence: highlights, glow, decoration
+     Soft White      #F8FAFC — background
+     Charcoal Gray   #333333 — text */
+
   /* Surfaces */
-  --color-bg: #f4f7fc;          /* airy sky-tinted paper */
+  --color-bg: #f8fafc;          /* soft white */
   --color-surface: #ffffff;
-  --color-surface-2: #e9f1fb;   /* soft sky wash for tinted sections */
-  --color-ink: #0c1a2e;         /* deep navy near-black (never pure #000) */
-  --color-ink-soft: #46586f;
-  --color-ink-muted: #6b7c93;
-  --color-line: #d9e4f1;        /* hairline */
+  --color-surface-2: #eaf1f9;   /* soft blue-tinted wash */
+  --color-ink: #333333;         /* charcoal gray */
+  --color-ink-soft: #4e5a66;
+  --color-ink-muted: #6e7a87;
+  --color-line: #dee5ed;        /* hairline */
 
-  /* Accent — Ghana gold (single interactive accent).
-     Bright gold for fills/graphics (dark ink text on top);
-     deep gold for text/icons on light backgrounds (WCAG AA). */
-  --color-accent: #f2b705;
-  --color-accent-strong: #d99e00;
-  --color-accent-deep: #8a6a00;
-  --color-accent-wash: #fdf4d6;
+  /* Primary interactive — deep royal blue (dominant per brand spec) */
+  --color-accent: #0b4f9c;
+  --color-accent-strong: #09417f;
+  --color-accent-deep: #083a73;
+  --color-accent-wash: #e8f0fa;
 
-  /* Atmosphere glow */
-  --color-warm: #ffb020;
+  /* Gold — excellence / achievement (decorative, glow, highlights) */
+  --color-gold: #d4a017;
+
+  /* Emerald — growth / opportunity (checks, success, progress) */
+  --color-emerald: #2e8b57;
 
   /* Type */
   --font-display: var(--font-sora);
@@ -38,9 +46,9 @@
   --radius-lg: 24px;
   --radius-pill: 999px;
 
-  /* Shadows tinted to navy/gold, never pure black */
-  --shadow-card: 0 12px 32px -16px rgb(12 26 46 / 0.16);
-  --shadow-lift: 0 26px 60px -26px rgb(217 158 0 / 0.4);
+  /* Shadows tinted to charcoal/royal blue, never pure black */
+  --shadow-card: 0 12px 32px -16px rgb(51 51 51 / 0.16);
+  --shadow-lift: 0 26px 60px -26px rgb(11 79 156 / 0.38);
 }
 
 @layer base {

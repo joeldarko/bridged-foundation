@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 type Direction = "up" | "left" | "right" | "none";
 
@@ -28,8 +28,11 @@ export function Reveal({
   const reduce = useReducedMotion();
   const MotionTag = motion[as];
 
-  // Reduced motion: plain static render.
-  if (reduce) {
+  // Hydration-safe reduced-motion: SSR + first client render keep the motion
+  // markup (matching structure), then swap to a plain static tag post-mount.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (mounted && reduce) {
     const Tag = as;
     return <Tag className={className}>{children}</Tag>;
   }

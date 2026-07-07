@@ -60,16 +60,16 @@ function BrandSplash() {
           transition={{ duration: 0.35, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
         />
       </svg>
-      <div className="flex overflow-hidden text-4xl font-bold tracking-tight text-ink" aria-label="BridgeEd Ghana">
-        {"BridgeEd Ghana".split("").map((ch, i) => (
+      <div className="flex overflow-hidden px-4 text-2xl font-bold tracking-tight text-ink sm:text-4xl" aria-label="BridgeEd Ghana Foundation">
+        {"BridgeEd Ghana Foundation".split("").map((ch, i) => (
           <motion.span
             key={i}
-            className={i >= 6 && i < 8 ? "text-accent-deep" : undefined}
+            className={i >= 6 && i < 8 ? "text-gold" : undefined}
             initial={{ y: "120%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
               duration: 0.4,
-              delay: 0.25 + i * 0.028,
+              delay: 0.22 + i * 0.02,
               ease: [0.16, 1, 0.3, 1],
             }}
           >

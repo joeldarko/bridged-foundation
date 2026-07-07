@@ -15,8 +15,8 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 right-[-6%] h-[440px] w-[440px] rounded-full bg-[radial-gradient(circle,rgba(255,176,32,0.16),transparent_64%)]" />
-        <div className="absolute -top-24 left-[-10%] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(22,104,255,0.12),transparent_66%)]" />
+        <div className="absolute -top-40 right-[-6%] h-[440px] w-[440px] rounded-full bg-[radial-gradient(circle,rgba(212,160,23,0.16),transparent_64%)]" />
+        <div className="absolute -top-24 left-[-10%] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(11,79,156,0.12),transparent_66%)]" />
       </div>
       <Container className="pt-20 pb-6 md:pt-28">
         <Reveal>

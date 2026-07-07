@@ -12,7 +12,7 @@ export function Footer() {
             <Link href={routes.home} className="flex items-center gap-2.5">
               <BridgeMark className="h-8 w-8 text-accent" />
               <span className="text-lg font-bold tracking-tight text-ink">
-                Bridge<span className="text-accent-deep">Ed</span> Ghana
+                Bridge<span className="text-gold">Ed</span> Ghana Foundation
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-ink-soft">{site.tagline}</p>

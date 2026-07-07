@@ -10,7 +10,7 @@ const base =
 const variants: Record<Variant, string> = {
   // Single interactive accent, page-wide. Gold fill carries dark ink text (WCAG).
   primary:
-    "bg-accent text-ink shadow-[0_10px_24px_-12px_rgb(217_158_0_/_0.7)] hover:bg-accent-strong hover:-translate-y-0.5 hover:shadow-lift",
+    "bg-accent text-white shadow-[0_10px_24px_-12px_rgb(11_79_156_/_0.7)] hover:bg-accent-strong hover:-translate-y-0.5 hover:shadow-lift",
   outline:
     "border border-line bg-surface text-ink hover:border-accent hover:text-accent-deep",
   onDark:

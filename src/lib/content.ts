@@ -4,11 +4,11 @@
 */
 
 export const site = {
-  name: "BridgeEd Ghana",
+  name: "BridgeEd Ghana Foundation",
   fullName: "BridgeEd Ghana Foundation",
   tagline: "Bridging Access. Unlocking Potential.",
   description:
-    "We connect underserved students in Ghana to education, technology, and opportunity through internet-equipped learning hubs.",
+    "BridgeEd Ghana Foundation improves educational opportunities for academically gifted students in Ghana who face financial barriers, connecting them to education, technology, and opportunity through internet-equipped learning hubs.",
   email: "hello@bridgeedghana.org", // TODO: replace with the foundation's real email
   phone: "+233 00 000 0000", // TODO: replace with the foundation's real number
 };
@@ -64,19 +64,36 @@ export const problems = [
 ];
 
 export const provisions = [
-  { label: "High-speed internet", note: "Starlink", icon: "WifiHigh" },
-  { label: "Desktop computers", note: "Per hub", icon: "Desktop" },
-  { label: "Academic support programs", note: "Structured", icon: "BookOpen" },
-  { label: "Digital literacy training", note: "Ground up", icon: "Cpu" },
+  { label: "Starlink internet service", note: "High-speed", icon: "WifiHigh" },
+  { label: "Two desktop computers", note: "Per school", icon: "Desktop" },
+  { label: "Digital learning resources", note: "Curated", icon: "BookOpen" },
+  { label: "A small technology learning hub", note: "On site", icon: "Cpu" },
   { label: "University application assistance", note: "End to end", icon: "GraduationCap" },
 ];
 
-export const programs = [
+export type ProgramGroup = { label: string; items: string[] };
+export type Program = {
+  num: string;
+  title: string;
+  body: string;
+  items?: string[];
+  groups?: ProgramGroup[];
+};
+
+export const programs: Program[] = [
   {
     num: "01",
     title: "BridgeEd Learning Hubs",
-    body: "We transform schools into centers of opportunity, with the connection and equipment a modern education depends on.",
-    items: ["Internet access", "Computers", "Structured learning programs"],
+    body: "We transform schools into centers of opportunity, with the connection and equipment a modern education depends on. Each participating school's hub offers:",
+    items: [
+      "Computer literacy",
+      "Internet access",
+      "Online courses",
+      "STEM activities",
+      "Homework support",
+      "Career counseling",
+      "University preparation",
+    ],
   },
   {
     num: "02",
@@ -98,11 +115,75 @@ export const programs = [
   },
   {
     num: "05",
-    title: "BridgeEd Scholars Fund",
+    title: "BridgeEd Scholars Program",
     body: "Our scholarship program supports brilliant but financially disadvantaged students, all the way through.",
-    items: ["Application fees", "Tuition support", "Mentorship through university"],
+    groups: [
+      {
+        label: "Scholars are identified by",
+        items: [
+          "Academic excellence",
+          "Financial need",
+          "Good character",
+          "Leadership potential",
+          "Commitment to community service",
+        ],
+      },
+      {
+        label: "The scholarship helps cover",
+        items: [
+          "Tuition",
+          "Books",
+          "Uniforms",
+          "School supplies",
+          "Transportation",
+          "Examination fees",
+          "University application fees",
+          "University tuition (for selected scholars)",
+        ],
+      },
+    ],
+  },
+  {
+    num: "06",
+    title: "Mentorship Program",
+    body: "Each scholar is paired with mentors who guide them well beyond the classroom.",
+    groups: [
+      {
+        label: "Mentors include",
+        items: [
+          "Teachers",
+          "University students",
+          "Professionals",
+          "Business leaders",
+          "Members of the Ghanaian diaspora",
+        ],
+      },
+      {
+        label: "Mentorship focuses on",
+        items: [
+          "Leadership",
+          "Career planning",
+          "Life skills",
+          "Financial literacy",
+          "Personal development",
+        ],
+      },
+    ],
   },
 ];
+
+/* Technology Initiative — what each pilot school receives (Pilot Schools page). */
+export const techInitiative = {
+  title: "The Technology Initiative",
+  lead: "Each pilot school receives:",
+  items: [
+    { label: "Starlink internet service", icon: "WifiHigh" },
+    { label: "Two desktop computers", icon: "Desktop" },
+    { label: "Digital learning resources", icon: "BookOpen" },
+    { label: "A small technology learning hub", icon: "Cpu" },
+  ],
+  goal: "The goal: reduce the digital divide while improving educational outcomes.",
+};
 
 export const schools = [
   {
@@ -157,7 +238,7 @@ export const partnerOpps = [
   { num: "01", title: "Sponsor a school", body: "Fund a complete learning hub, from internet to computers to programs." },
   { num: "02", title: "Provide technology", body: "Contribute computers, devices, or connectivity to equip a classroom." },
   { num: "03", title: "Mentor students", body: "Share your time and experience to guide students toward university and careers." },
-  { num: "04", title: "Fund scholarships", body: "Support the BridgeEd Scholars Fund and carry a student all the way through." },
+  { num: "04", title: "Fund scholarships", body: "Support the BridgeEd Scholars Program and carry a student all the way through." },
 ];
 
 export const tiers = [

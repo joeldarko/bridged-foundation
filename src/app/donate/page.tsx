@@ -33,7 +33,7 @@ export default function Donate() {
                   key={t.amount}
                   className={
                     "flex flex-col p-9 lg:p-12 " +
-                    (t.featured ? "bg-accent text-ink" : "")
+                    (t.featured ? "bg-accent text-white" : "")
                   }
                 >
                   {t.ribbon ? (
@@ -41,7 +41,7 @@ export default function Donate() {
                       className={
                         "inline-flex w-fit items-center rounded-pill px-3 py-1 text-xs font-semibold " +
                         (t.featured
-                          ? "bg-ink/10 text-ink"
+                          ? "bg-white/20 text-white"
                           : "bg-accent-wash text-accent-deep")
                       }
                     >
@@ -53,10 +53,10 @@ export default function Donate() {
                   <div className="mt-6 text-5xl font-extrabold tracking-tight">
                     {t.amount}
                   </div>
-                  <div className="mt-2 text-lg font-semibold text-ink">
+                  <div className={"mt-2 text-lg font-semibold " + (t.featured ? "text-white" : "text-ink")}>
                     {t.name}
                   </div>
-                  <p className={"mt-4 flex-1 leading-relaxed " + (t.featured ? "text-ink/75" : "text-ink-soft")}>
+                  <p className={"mt-4 flex-1 leading-relaxed " + (t.featured ? "text-white/85" : "text-ink-soft")}>
                     {t.body}
                   </p>
                   <div className="mt-9">

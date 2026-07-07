@@ -7,7 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { TextReveal } from "@/components/TextReveal";
 import { Parallax } from "@/components/Parallax";
 import { Icon } from "@/components/Icon";
-import { schools, routes } from "@/lib/content";
+import { schools, techInitiative, routes } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Pilot Schools",
@@ -68,11 +68,41 @@ export default function Schools() {
         ))}
       </div>
 
+      {/* TECHNOLOGY INITIATIVE — what each pilot school receives */}
+      <section className="py-24 md:py-36">
+        <Container>
+          <TextReveal
+            lines={[techInitiative.title]}
+            className="text-[clamp(2rem,3.6vw,3.2rem)] font-bold leading-[1.08]"
+          />
+          <Reveal delay={0.1}>
+            <p className="mt-5 text-lg leading-relaxed text-ink-soft">
+              {techInitiative.lead}
+            </p>
+          </Reveal>
+          <ul className="mt-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4">
+            {techInitiative.items.map((item, i) => (
+              <Reveal as="li" key={item.label} delay={i * 0.06}>
+                <div>
+                  <Icon name={item.icon} size={30} className="text-accent-deep" />
+                  <div className="mt-4 font-bold leading-snug">{item.label}</div>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
+          <Reveal delay={0.2}>
+            <p className="mt-12 max-w-[52ch] text-lg font-medium leading-relaxed text-ink">
+              {techInitiative.goal}
+            </p>
+          </Reveal>
+        </Container>
+      </section>
+
       {/* GOAL — light closing band (the breather) */}
       <section className="relative overflow-hidden bg-surface-2">
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-16 left-1/2 h-[340px] w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,176,32,0.16),transparent_66%)]"
+          className="pointer-events-none absolute -top-16 left-1/2 h-[340px] w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,160,23,0.16),transparent_66%)]"
         />
         <Container className="relative py-28 text-center md:py-40">
           <div className="mx-auto max-w-3xl">

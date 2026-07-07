@@ -23,7 +23,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit}>
       {sent ? (
-        <div className="flex items-center gap-3 py-6 text-accent-deep" aria-live="polite">
+        <div className="flex items-center gap-3 py-6 text-emerald" aria-live="polite">
           <Icon name="Check" size={24} weight="bold" className="flex-none" />
           <span className="text-lg font-medium text-ink">
             Thank you. Your message has been received and we will be in touch soon.

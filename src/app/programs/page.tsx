@@ -12,7 +12,7 @@ import { programs, routes } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Five programs that transform Ghanaian schools: Learning Hubs, Academic Support, Digital Literacy, University Access, and the BridgeEd Scholars Fund.",
+    "Six programs that transform Ghanaian schools: Learning Hubs, Academic Support, Digital Literacy, University Access, the BridgeEd Scholars Program, and Mentorship.",
 };
 
 export default function Programs() {
@@ -21,7 +21,7 @@ export default function Programs() {
       <PageHero
         eyebrow="Programs"
         titleLines={["From connection to", "a college acceptance"]}
-        lead="Five programs work together to take a student from their first day online to their first day at university."
+        lead="Six programs work together to take a student from their first day online to their first day at university."
       />
 
       {/* full-bleed banner */}
@@ -47,7 +47,7 @@ export default function Programs() {
               {programs.map((p, i) => (
                 <Reveal as="li" key={p.num} delay={i * 0.05} className="list-none">
                   <div className="relative flex gap-6 pb-20 last:pb-0 md:gap-9">
-                    <span className="relative z-10 grid h-10 w-10 flex-none place-items-center rounded-pill bg-accent text-sm font-extrabold text-ink shadow-[0_8px_20px_-8px_rgb(217_158_0_/_0.8)] md:h-14 md:w-14 md:text-base">
+                    <span className="relative z-10 grid h-10 w-10 flex-none place-items-center rounded-pill bg-accent text-sm font-extrabold text-white shadow-[0_8px_20px_-8px_rgb(11_79_156_/_0.8)] md:h-14 md:w-14 md:text-base">
                       {p.num}
                     </span>
                     <div className="pt-1 md:pt-2.5">
@@ -55,14 +55,33 @@ export default function Programs() {
                       <p className="mt-4 max-w-[52ch] text-lg leading-relaxed text-ink-soft">
                         {p.body}
                       </p>
-                      <ul className="mt-6 flex flex-wrap gap-x-7 gap-y-3">
-                        {p.items.map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-ink-soft">
-                            <Icon name="Check" size={16} weight="bold" className="text-accent-deep" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+
+                      {p.items && (
+                        <ul className="mt-6 flex flex-wrap gap-x-7 gap-y-3">
+                          {p.items.map((item) => (
+                            <li key={item} className="flex items-center gap-2 text-ink-soft">
+                              <Icon name="Check" size={16} weight="bold" className="text-emerald" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {p.groups?.map((g) => (
+                        <div key={g.label} className="mt-6">
+                          <div className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
+                            {g.label}
+                          </div>
+                          <ul className="mt-3 flex flex-wrap gap-x-7 gap-y-3">
+                            {g.items.map((item) => (
+                              <li key={item} className="flex items-center gap-2 text-ink-soft">
+                                <Icon name="Check" size={16} weight="bold" className="text-emerald" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </Reveal>

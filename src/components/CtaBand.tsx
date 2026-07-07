@@ -20,17 +20,17 @@ export function CtaBand({
     <section className="relative overflow-hidden bg-accent">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 right-[-6%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(255,176,32,0.35),transparent_64%)]"
+        className="pointer-events-none absolute -top-24 right-[-6%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(212,160,23,0.35),transparent_64%)]"
       />
       <Container className="relative py-28 text-center md:py-36">
         <div className="mx-auto max-w-3xl">
           <TextReveal
             lines={[title]}
-            className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-bold leading-[1.1] text-ink"
+            className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-bold leading-[1.1] text-white"
           />
           {body && (
             <Reveal delay={0.1}>
-              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink/75">
+              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/85">
                 {body}
               </p>
             </Reveal>
@@ -45,7 +45,7 @@ export function CtaBand({
                 <CTA
                   href={secondary.href}
                   size="lg"
-                  className="border border-ink/40 bg-transparent text-ink hover:bg-ink/10"
+                  className="border border-white/40 bg-transparent text-white hover:bg-white/10"
                 >
                   {secondary.label}
                 </CTA>

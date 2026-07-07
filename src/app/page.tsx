@@ -38,8 +38,11 @@ const heroSlides = [
 export default function Home() {
   return (
     <>
+      {/* ============ IMPACT TICKER — glowing gold strip above the hero ============ */}
+      <Marquee items={tickerItems} />
+
       {/* ============ HERO — full-screen rotating photo, text overlay ============ */}
-      <section className="relative flex min-h-[calc(100dvh-68px)] items-end overflow-hidden">
+      <section className="relative flex min-h-[calc(100dvh-128px)] items-end overflow-hidden">
         <HeroSlideshow images={heroSlides} />
         {/* scrim: left column + bottom for legibility */}
         <div
@@ -101,8 +104,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      <Marquee items={tickerItems} />
 
       {/* ============ PROBLEM — open editorial grid ============ */}
       <section className="py-28 md:py-40">
@@ -209,33 +210,22 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ============ MISSION / VISION — pure typographic air ============ */}
+      {/* ============ MISSION — pure typographic air ============ */}
       <section className="py-32 md:py-44">
         <Container size="narrow" className="text-center">
+          <Reveal>
+            <span className="font-semibold text-accent-deep">Our Mission</span>
+          </Reveal>
           <TextReveal
-            lines={["Purpose, in two sentences"]}
-            className="text-[clamp(2rem,3.6vw,3.4rem)] font-bold leading-[1.08]"
+            lines={[
+              "The project is designed to improve",
+              "educational opportunities for",
+              "academically gifted students in Ghana",
+              "who face financial barriers.",
+            ]}
+            delay={0.08}
+            className="mx-auto mt-6 text-[clamp(1.5rem,2.8vw,2.4rem)] font-bold leading-[1.25]"
           />
-          <div className="mt-16 grid gap-16 sm:grid-cols-2 sm:gap-14 sm:text-left">
-            <Reveal delay={0.08}>
-              <div>
-                <span className="font-semibold text-accent-deep">Our Mission</span>
-                <p className="mt-4 text-xl leading-relaxed text-ink xl:text-2xl xl:leading-relaxed">
-                  To equip underserved students in Ghana with academic support,
-                  digital access, and university readiness tools.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <div>
-                <span className="font-semibold text-accent-deep">Our Vision</span>
-                <p className="mt-4 text-xl leading-relaxed text-ink xl:text-2xl xl:leading-relaxed">
-                  A Ghana where every student, regardless of background, has
-                  equal access to opportunity.
-                </p>
-              </div>
-            </Reveal>
-          </div>
         </Container>
       </section>
 
@@ -243,7 +233,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-surface-2 py-28 md:py-40">
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,176,32,0.15),transparent_66%)]"
+          className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,160,23,0.15),transparent_66%)]"
         />
         <Container className="relative">
           <TextReveal

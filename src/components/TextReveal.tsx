@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
 
 /*
   Headline line-mask reveal. Each line sits in an overflow-hidden mask and
@@ -24,14 +25,17 @@ export function TextReveal({
   const reduce = useReducedMotion();
   const MotionTag = motion[Tag];
 
-  // Reduced motion: plain static render, no transforms at all.
-  if (reduce) {
+  // Hydration-safe reduced-motion: keep motion markup for SSR + first client
+  // render (matching structure), then swap to plain static spans post-mount.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (mounted && reduce) {
     return (
       <Tag className={className}>
         {lines.map((line, i) => (
           <span
             key={i}
-            className={"block" + (accentLines.includes(i) ? " text-accent" : "")}
+            className={"block" + (accentLines.includes(i) ? " text-gold" : "")}
           >
             {line}
           </span>
@@ -52,7 +56,7 @@ export function TextReveal({
           <motion.span
             className={
               "block will-change-transform" +
-              (accentLines.includes(i) ? " text-accent" : "")
+              (accentLines.includes(i) ? " text-gold" : "")
             }
             variants={{
               hidden: { y: "110%" },
