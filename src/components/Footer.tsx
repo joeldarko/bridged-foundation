@@ -5,12 +5,12 @@ import { BridgeMark } from "@/components/BridgeMark";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-line bg-surface">
+    <footer data-bg="surface" className="mt-auto border-t border-line">
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link href={routes.home} className="flex items-center gap-2.5">
-              <BridgeMark className="h-8 w-8 text-accent" />
+              <BridgeMark className="h-8 w-8 text-accent-deep" />
               <span className="text-lg font-bold tracking-tight text-ink">
                 Bridge<span className="text-gold">Ed</span> Ghana Foundation
               </span>

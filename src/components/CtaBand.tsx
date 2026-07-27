@@ -26,11 +26,11 @@ export function CtaBand({
         <div className="mx-auto max-w-3xl">
           <TextReveal
             lines={[title]}
-            className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-bold leading-[1.1] text-white"
+            className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-bold leading-[1.1] text-ink"
           />
           {body && (
             <Reveal delay={0.1}>
-              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/85">
+              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink/75">
                 {body}
               </p>
             </Reveal>
@@ -45,7 +45,7 @@ export function CtaBand({
                 <CTA
                   href={secondary.href}
                   size="lg"
-                  className="border border-white/40 bg-transparent text-white hover:bg-white/10"
+                  className="border border-ink/30 bg-transparent text-ink hover:bg-ink/5"
                 >
                   {secondary.label}
                 </CTA>

@@ -52,7 +52,7 @@ export function ContactForm() {
           <div>
             <button
               type="submit"
-              className="inline-flex h-13 items-center justify-center gap-2 rounded-pill bg-accent px-8 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent-strong active:translate-y-px"
+              className="inline-flex h-13 items-center justify-center gap-2 rounded-pill bg-accent px-8 text-base font-semibold text-ink transition-all hover:-translate-y-0.5 hover:bg-accent-strong active:translate-y-px"
             >
               Send Message
               <Icon name="ArrowRight" size={18} />

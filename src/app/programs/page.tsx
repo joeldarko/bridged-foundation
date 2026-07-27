@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Container } from "@/components/Container";
-import { PageHero } from "@/components/PageHero";
+import { ImageHero } from "@/components/ImageHero";
 import { CtaBand } from "@/components/CtaBand";
 import { Reveal } from "@/components/Reveal";
-import { Parallax } from "@/components/Parallax";
 import { DrawLine } from "@/components/DrawLine";
 import { Icon } from "@/components/Icon";
 import { programs, routes } from "@/lib/content";
@@ -18,36 +16,26 @@ export const metadata: Metadata = {
 export default function Programs() {
   return (
     <>
-      <PageHero
+      <ImageHero
         eyebrow="Programs"
         titleLines={["From connection to", "a college acceptance"]}
+        accentLines={[1]}
         lead="Six programs work together to take a student from their first day online to their first day at university."
+        image={{
+          src: "/img/digital-literacy.jpg",
+          alt: "A Ghanaian student smiling while learning at a laptop",
+        }}
       />
 
-      {/* full-bleed banner */}
-      <div className="mt-10">
-        <Parallax strength={7} className="relative h-[70dvh] min-h-[380px] w-full lg:h-[85dvh]">
-          <div className="relative h-full w-full">
-            <Image
-              src="/img/digital-literacy.jpg"
-              alt="A Ghanaian student smiling while learning at a laptop"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-        </Parallax>
-      </div>
-
       {/* THE JOURNEY — scroll-drawn connection line */}
-      <section className="py-24 md:py-36">
+      <section data-bg="bg" className="py-24 md:py-36">
         <Container size="narrow">
           <DrawLine>
             <ol>
               {programs.map((p, i) => (
                 <Reveal as="li" key={p.num} delay={i * 0.05} className="list-none">
                   <div className="relative flex gap-6 pb-20 last:pb-0 md:gap-9">
-                    <span className="relative z-10 grid h-10 w-10 flex-none place-items-center rounded-pill bg-accent text-sm font-extrabold text-white shadow-[0_8px_20px_-8px_rgb(11_79_156_/_0.8)] md:h-14 md:w-14 md:text-base">
+                    <span className="relative z-10 grid h-10 w-10 flex-none place-items-center rounded-pill bg-accent text-sm font-extrabold text-ink shadow-[0_8px_20px_-8px_rgb(212_160_23_/_0.7)] md:h-14 md:w-14 md:text-base">
                       {p.num}
                     </span>
                     <div className="pt-1 md:pt-2.5">

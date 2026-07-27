@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* ============ PROBLEM — open editorial grid ============ */}
-      <section className="py-28 md:py-40">
+      <section data-bg="bg" className="py-28 md:py-40">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
             <div className="lg:sticky lg:top-32 lg:self-start">
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* ============ SOLUTION — full-screen photo band + open provisions ============ */}
-      <section className="bg-surface pb-28 md:pb-40">
+      <section data-bg="surface" className="pb-28 md:pb-40">
         <div className="relative flex min-h-[92dvh] items-end">
           <Parallax strength={6} className="absolute inset-0">
             <div className="relative h-full w-full">
@@ -200,7 +200,7 @@ export default function Home() {
           </ul>
 
           <Reveal delay={0.1}>
-            <div className="mt-16">
+            <div className="mt-16 flex justify-center">
               <CTA href={routes.programs} variant="outline" size="lg">
                 Explore Our Programs
                 <Icon name="ArrowRight" size={18} />
@@ -211,26 +211,38 @@ export default function Home() {
       </section>
 
       {/* ============ MISSION — pure typographic air ============ */}
-      <section className="py-32 md:py-44">
-        <Container size="narrow" className="text-center">
-          <Reveal>
-            <span className="font-semibold text-accent-deep">Our Mission</span>
-          </Reveal>
+      <section data-bg="bg" className="pb-32 pt-12 text-center md:pb-44 md:pt-20">
+        {/* full-bleed wordmark — spans the whole viewport, no container padding */}
+        <Reveal>
+          <span className="block w-full whitespace-nowrap font-display text-[16vw] font-bold leading-[0.9] tracking-[-0.04em] text-accent-deep">
+            Our Mission
+          </span>
+        </Reveal>
+        <Container className="text-center">
           <TextReveal
             lines={[
-              "The project is designed to improve",
-              "educational opportunities for",
-              "academically gifted students in Ghana",
-              "who face financial barriers.",
+              "We envision a Ghana where a student's future is",
+              "shaped by their ability, never by the income their",
+              "family happens to have.",
             ]}
             delay={0.08}
-            className="mx-auto mt-6 text-[clamp(1.5rem,2.8vw,2.4rem)] font-bold leading-[1.25]"
+            className="mx-auto mt-10 max-w-[64ch] font-sans text-[clamp(1.5rem,2.4vw,2.1rem)] font-medium leading-relaxed tracking-normal text-ink-soft"
+          />
+          <TextReveal
+            lines={[
+              "Our mission is to connect gifted, underserved students with",
+              "the funding, mentorship, and reliable connectivity they need to",
+              "reach university and become leaders of change in the",
+              "communities they call home.",
+            ]}
+            delay={0.14}
+            className="mx-auto mt-8 max-w-[64ch] font-sans text-[clamp(1.5rem,2.4vw,2.1rem)] font-medium leading-relaxed tracking-normal text-ink-soft"
           />
         </Container>
       </section>
 
       {/* ============ IMPACT — stat row, airy ============ */}
-      <section className="relative overflow-hidden bg-surface-2 py-28 md:py-40">
+      <section data-bg="surface-2" className="relative overflow-hidden py-28 md:py-40">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,160,23,0.15),transparent_66%)]"

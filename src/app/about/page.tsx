@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/Container";
-import { PageHero } from "@/components/PageHero";
+import { ImageHero } from "@/components/ImageHero";
 import { CtaBand } from "@/components/CtaBand";
 import { Reveal } from "@/components/Reveal";
 import { TextReveal } from "@/components/TextReveal";
-import { Parallax } from "@/components/Parallax";
 import { values, routes } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,52 +22,19 @@ const founderBio = [
 export default function About() {
   return (
     <>
-      <PageHero
+      <ImageHero
         eyebrow="About us"
-        titleLines={["Built from", "lived experience"]}
-        lead="BridgeEd Ghana Foundation exists for one reason: a student's future should never be decided by where they happen to go to school."
+        titleLines={["Every student", "carries potential"]}
+        accentLines={[1]}
+        lead="A student's future should never be decided by where they happen to go to school. We bring the connection, the tools, and the guidance directly to the students the system overlooks — so ability is finally matched with opportunity."
+        image={{
+          src: "/img/portrait-student.jpg",
+          alt: "Portrait of a Ghanaian student looking ahead with hope",
+        }}
       />
 
-      {/* WHY WE EXIST — full-screen portrait, text overlaid */}
-      <section className="relative mt-16 flex min-h-[100dvh] items-end overflow-hidden">
-        <Parallax strength={6} className="absolute inset-0">
-          <div className="relative h-full w-full">
-            <Image
-              src="/img/portrait-student.jpg"
-              alt="Portrait of a Ghanaian student looking ahead with hope"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-        </Parallax>
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/5"
-        />
-        <Container className="relative pb-16 pt-40 lg:pb-24">
-          <Reveal>
-            <span className="inline-flex items-center rounded-pill bg-white/12 px-3.5 py-1.5 text-sm font-semibold text-white backdrop-blur-sm">
-              Why we exist
-            </span>
-          </Reveal>
-          <TextReveal
-            lines={["Every student", "carries potential"]}
-            delay={0.08}
-            className="mt-5 text-[clamp(2.2rem,4.4vw,4.2rem)] font-bold leading-[1.05] text-white"
-          />
-          <Reveal delay={0.25}>
-            <p className="mt-7 max-w-[46ch] text-lg leading-relaxed text-white/85 xl:text-xl">
-              What too few of them have is access. We bring the connection,
-              the tools, and the guidance directly to the students the system
-              overlooks, so ability is finally matched with opportunity.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
       {/* STORY */}
-      <section className="bg-surface py-24 md:py-36">
+      <section data-bg="surface" className="py-24 md:py-36">
         <Container>
           <TextReveal
             lines={["Our Story"]}
@@ -94,7 +60,7 @@ export default function About() {
       </section>
 
       {/* THE FOUNDER — full section: photo + background + accomplishments */}
-      <section className="py-24 md:py-36">
+      <section data-bg="bg" className="py-24 md:py-36">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
             <Reveal direction="left">
@@ -143,7 +109,7 @@ export default function About() {
       </section>
 
       {/* MISSION / VISION — pure typography */}
-      <section className="py-28 md:py-40">
+      <section data-bg="bg" className="py-28 md:py-40">
         <Container>
           <div className="flex flex-col gap-16">
             <Reveal direction="left">
@@ -188,7 +154,7 @@ export default function About() {
       </section>
 
       {/* VALUES — open grid, air as structure */}
-      <section className="bg-surface-2 py-28 md:py-40">
+      <section data-bg="surface-2" className="py-28 md:py-40">
         <Container>
           <TextReveal
             lines={["Our Values"]}

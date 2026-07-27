@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PageHero } from "@/components/PageHero";
+import { ImageHero } from "@/components/ImageHero";
 import { Container } from "@/components/Container";
 import { CTA } from "@/components/CTA";
 import { Reveal } from "@/components/Reveal";
@@ -18,14 +18,19 @@ export const metadata: Metadata = {
 export default function Schools() {
   return (
     <>
-      <PageHero
+      <ImageHero
         eyebrow="Pilot schools"
         titleLines={["Where we", "are starting"]}
-        lead="Two partner schools become our first hubs, and the proof of a model we will carry across Ghana."
+        accentLines={[1]}
+        lead="Two partner schools become our first hubs — and the proof of a model we will carry across Ghana."
+        image={{
+          src: "/img/community.jpg",
+          alt: "A group of joyful Ghanaian students together outside their school",
+        }}
       />
 
       {/* SCHOOLS — full-screen photo sections, text overlaid */}
-      <div className="mt-16 flex flex-col">
+      <div className="flex flex-col">
         {schools.map((s) => (
           <section
             key={s.name}
@@ -69,7 +74,7 @@ export default function Schools() {
       </div>
 
       {/* TECHNOLOGY INITIATIVE — what each pilot school receives */}
-      <section className="py-24 md:py-36">
+      <section data-bg="bg" className="py-24 md:py-36">
         <Container>
           <TextReveal
             lines={[techInitiative.title]}
@@ -99,7 +104,7 @@ export default function Schools() {
       </section>
 
       {/* GOAL — light closing band (the breather) */}
-      <section className="relative overflow-hidden bg-surface-2">
+      <section data-bg="surface-2" className="relative overflow-hidden">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-16 left-1/2 h-[340px] w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,160,23,0.16),transparent_66%)]"

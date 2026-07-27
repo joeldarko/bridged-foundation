@@ -24,7 +24,7 @@ export default function Donate() {
       />
 
       {/* TIERS — one quiet comparison panel (the single hairline moment) */}
-      <section className="py-20 md:py-28">
+      <section data-bg="bg" className="py-20 md:py-28">
         <Container>
           <Reveal direction="none">
             <div className="grid overflow-hidden rounded-lg border border-line bg-surface md:grid-cols-3 md:divide-x md:divide-line max-md:divide-y max-md:divide-line">
@@ -33,7 +33,7 @@ export default function Donate() {
                   key={t.amount}
                   className={
                     "flex flex-col p-9 lg:p-12 " +
-                    (t.featured ? "bg-accent text-white" : "")
+                    (t.featured ? "bg-accent text-ink" : "")
                   }
                 >
                   {t.ribbon ? (
@@ -41,7 +41,7 @@ export default function Donate() {
                       className={
                         "inline-flex w-fit items-center rounded-pill px-3 py-1 text-xs font-semibold " +
                         (t.featured
-                          ? "bg-white/20 text-white"
+                          ? "bg-ink/10 text-ink"
                           : "bg-accent-wash text-accent-deep")
                       }
                     >
@@ -53,10 +53,10 @@ export default function Donate() {
                   <div className="mt-6 text-5xl font-extrabold tracking-tight">
                     {t.amount}
                   </div>
-                  <div className={"mt-2 text-lg font-semibold " + (t.featured ? "text-white" : "text-ink")}>
+                  <div className={"mt-2 text-lg font-semibold " + (t.featured ? "text-ink" : "text-ink")}>
                     {t.name}
                   </div>
-                  <p className={"mt-4 flex-1 leading-relaxed " + (t.featured ? "text-white/85" : "text-ink-soft")}>
+                  <p className={"mt-4 flex-1 leading-relaxed " + (t.featured ? "text-ink/75" : "text-ink-soft")}>
                     {t.body}
                   </p>
                   <div className="mt-9">
@@ -76,7 +76,7 @@ export default function Donate() {
       </section>
 
       {/* WHY DONATE — open row */}
-      <section className="py-20 md:py-32">
+      <section data-bg="bg" className="py-20 md:py-32">
         <Container>
           <TextReveal
             lines={["Why donate?"]}

@@ -31,7 +31,7 @@ const HOLD_MS = 480;
 function BrandSplash() {
   return (
     <div className="flex flex-col items-center gap-7">
-      <svg viewBox="0 0 32 32" fill="none" className="h-24 w-24 text-accent" aria-hidden>
+      <svg viewBox="0 0 32 32" fill="none" className="h-24 w-24 text-accent-deep" aria-hidden>
         <motion.path
           d="M3 21c5-8 21-8 26 0"
           stroke="currentColor"
@@ -97,7 +97,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
       if (!sessionStorage.getItem("bridgeed-splash")) {
         sessionStorage.setItem("bridgeed-splash", "1");
         setSplash(true);
-        const t = setTimeout(() => setSplash(false), 1150);
+        const t = setTimeout(() => setSplash(false), 1650);
         return () => clearTimeout(t);
       }
     } catch {
@@ -154,7 +154,22 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
             transition={{ duration: COVER_MS / 1000, ease: [0.72, 0, 0.24, 1] }}
             aria-hidden
           >
-            <BrandSplash />
+            {/* kente texture — matches the site's KenteTexture (scoped to this overlay) */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url(/img/kente-bg.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: 0.52,
+                mixBlendMode: "multiply",
+              }}
+            />
+            <div className="relative">
+              <BrandSplash />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

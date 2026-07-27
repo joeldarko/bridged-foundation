@@ -38,7 +38,7 @@ export function DrawLine({
           y1="0"
           x2="1.5"
           y2="100"
-          stroke="var(--color-accent)"
+          stroke="var(--color-accent-deep)"
           strokeWidth="3"
           style={reduce ? { pathLength: 1 } : { pathLength: progress }}
         />

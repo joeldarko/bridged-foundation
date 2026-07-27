@@ -36,7 +36,7 @@ export function Header() {
       <Container>
         <nav className="flex h-[68px] items-center justify-between gap-6" aria-label="Primary">
           <Link href={routes.home} className="flex items-center gap-2.5" aria-label={`${site.fullName} home`}>
-            <BridgeMark className="h-8 w-8 text-accent" />
+            <BridgeMark className="h-8 w-8 text-accent-deep" />
             <span className="text-lg font-bold tracking-tight text-ink">
               Bridge<span className="text-gold">Ed</span> Ghana Foundation
             </span>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { site } from "@/lib/content";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { KenteTexture } from "@/components/KenteTexture";
 import { TransitionProvider } from "@/components/transition/TransitionProvider";
 
 const sora = Sora({
@@ -37,6 +38,7 @@ export default function RootLayout({
     <html lang="en" className={`${sora.variable} ${figtree.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <TransitionProvider>
+          <KenteTexture />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

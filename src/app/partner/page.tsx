@@ -25,7 +25,7 @@ export default function Partner() {
       />
 
       {/* WHO WE PARTNER WITH — open grid */}
-      <section className="py-24 md:py-36">
+      <section data-bg="bg" className="py-24 md:py-36">
         <Container>
           <TextReveal
             lines={["Who we partner with"]}
@@ -63,7 +63,7 @@ export default function Partner() {
       </Parallax>
 
       {/* OPPORTUNITIES — big numerals, air as structure */}
-      <section className="bg-surface py-24 md:py-36">
+      <section data-bg="surface" className="py-24 md:py-36">
         <Container>
           <TextReveal
             lines={["Partnership opportunities"]}
@@ -78,7 +78,7 @@ export default function Partner() {
             {partnerOpps.map((o, i) => (
               <Reveal key={o.num} delay={i * 0.06}>
                 <div>
-                  <span className="text-5xl font-extrabold tabular-nums text-accent-deep/25 md:text-6xl">
+                  <span className="text-5xl font-extrabold tabular-nums text-accent md:text-6xl">
                     {o.num}
                   </span>
                   <h3 className="mt-4 text-2xl font-bold">{o.title}</h3>

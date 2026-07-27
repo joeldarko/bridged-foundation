@@ -24,7 +24,7 @@ export default function Contact() {
         lead="Questions, partnerships, or want to sponsor a school? Send a message and we will reply."
       />
 
-      <section className="py-20 md:py-32">
+      <section data-bg="bg" className="py-20 md:py-32">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-28">
             <div>
